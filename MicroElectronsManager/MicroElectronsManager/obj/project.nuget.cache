@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BvoV5x5aldNt7wZYntlGkiPL2YEdedB2WEZAC1UTXl9U/9HF/h8pS9my3gaQqOWunD2zKRKFfvTSc1xCFw1BBA==",
+  "dgSpecHash": "agTazfnkip2EJ/CBCIx5phYN3HU/FR7ZIHBeoSE+Q0NOYgkXXIWjx/LhxbuzpbknGMM20rg5NylVbh1EyQ9M/Q==",
   "success": true,
   "projectFilePath": "G:\\Work\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\MicroElectronsManager.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\alexs\\.nuget\\packages\\restsharp\\106.13.0\\restsharp.106.13.0.nupkg.sha512"
+  ],
   "logs": []
 }

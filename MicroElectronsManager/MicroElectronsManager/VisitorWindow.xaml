@@ -1,0 +1,21 @@
+﻿<Window x:Class="MicroElectronsManager.VisitorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MicroElectronsManager"
+        mc:Ignorable="d"
+        Title="Журнал посещений" Height="450" Width="800" Closed="Window_Closed" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#212529">
+            <TextBlock x:Name="TbWelcome" Text="Здравствуйте, юзернейм" Foreground="#ffffff" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="BtnExit" Content="Выход" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="27" Margin="15 0 0 0"
+                    Background="#ffffff" BorderBrush="#ffffff" Foreground="#212529" FontSize="15"/>
+        </Grid>
+    </Grid>
+</Window>
