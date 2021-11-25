@@ -18,13 +18,13 @@ using MicroElectronsManager.Models;
 namespace MicroElectronsManager
 {
     /// <summary>
-    /// Логика взаимодействия для VisitorWindow.xaml
+    /// Логика взаимодействия для SupplyWindow.xaml
     /// </summary>
-    public partial class VisitorWindow : Window
+    public partial class SupplyWindow : Window
     {
         public UserData user;
 
-        public VisitorWindow()
+        public SupplyWindow()
         {
             InitializeComponent();
         }

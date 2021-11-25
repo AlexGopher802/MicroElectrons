@@ -15,7 +15,7 @@ namespace MicroElectronsManager.Logics
             try
             {
                 ResponseMessageData responseMessage = JsonSerializer.Deserialize<ResponseMessageData>(jsonMessage);
-                return responseMessage.message;
+                return responseMessage.Message;
             }
             catch
             {

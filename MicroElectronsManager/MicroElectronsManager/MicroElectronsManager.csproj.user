@@ -7,12 +7,42 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="BookkeepWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HRmanagerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ManufactureWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StorekeepWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SupplyWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="VisitorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="BookkeepWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HRmanagerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ManufactureWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StorekeepWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SupplyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VisitorWindow.xaml">

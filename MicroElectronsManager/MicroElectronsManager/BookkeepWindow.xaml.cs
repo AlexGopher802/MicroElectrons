@@ -18,13 +18,13 @@ using MicroElectronsManager.Models;
 namespace MicroElectronsManager
 {
     /// <summary>
-    /// Логика взаимодействия для VisitorWindow.xaml
+    /// Логика взаимодействия для BookkeepWindow.xaml
     /// </summary>
-    public partial class VisitorWindow : Window
+    public partial class BookkeepWindow : Window
     {
         public UserData user;
 
-        public VisitorWindow()
+        public BookkeepWindow()
         {
             InitializeComponent();
         }

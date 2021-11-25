@@ -22,3 +22,15 @@ G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net
 G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\ref\MicroElectronsManager.dll
 G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\MicroElectronsManager.pdb
 G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\MicroElectronsManager.genruntimeconfig.cache
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\VisitorWindow.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\VisitorWindow.baml
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\BookkeepWindow.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\HRmanagerWindow.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\ManufactureWindow.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\StorekeepWindow.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\SupplyWindow.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\BookkeepWindow.baml
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\HRmanagerWindow.baml
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\ManufactureWindow.baml
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\StorekeepWindow.baml
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\SupplyWindow.baml

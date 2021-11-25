@@ -19,7 +19,7 @@ using MicroElectronsManager.Models;
 namespace MicroElectronsManager
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class LoginWindow : Window
     {
@@ -38,15 +38,47 @@ namespace MicroElectronsManager
                 .AddJsonBody(new
                 {
                     Login = TbLogin.Text.ToString(),
-                    Password = TbPassword.Text.ToString()
+                    Password = TbPassword.Password.ToString()
                 }));
 
                 if (response.StatusCode != System.Net.HttpStatusCode.OK)
                 {
                     throw new Exception(ResponseMessageHandler.GetMessage(response.Content));
                 }
-                
-                MessageBox.Show($"{response.Data.LastName} {response.Data.FirstName} {response.Data.Patronymic}, {response.Data.Post}");
+
+                this.Hide();
+                TbLogin.Text = "";
+                TbPassword.Password = "";
+                switch (response.Data.Post)
+                {
+                    case "Бухгалтер":
+                        new BookkeepWindow() { Owner = this, user = response.Data }.Show();
+                        break;
+
+                    case "Кладовщик":
+                        new StorekeepWindow() { Owner = this, user = response.Data }.Show();
+                        break;
+
+                    case "HR менеджер":
+                        new HRmanagerWindow() { Owner = this, user = response.Data }.Show();
+                        break;
+
+                    case "Вахтёр":
+                        new VisitorWindow() { Owner = this, user = response.Data }.Show();
+                        break;
+
+                    case "Менеджер поставок":
+                        new SupplyWindow() { Owner = this, user = response.Data }.Show();
+                        break;
+
+                    case "Начальник производства":
+                        new ManufactureWindow() { Owner = this, user = response.Data }.Show();
+                        break;
+
+                    default:
+                        this.Show();
+                        break;
+                }
             }
             catch (Exception ex)
             {

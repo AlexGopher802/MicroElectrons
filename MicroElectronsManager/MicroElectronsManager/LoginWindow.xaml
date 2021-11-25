@@ -5,11 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MicroElectronsManager"
         mc:Ignorable="d"
-        Title="Авторизация" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Авторизация" Width="1366" MinWidth="1366" Height="768" MinHeight="768" WindowState="Maximized" WindowStyle="SingleBorderWindow"  WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox x:Name="TbLogin" HorizontalAlignment="Left" Margin="274,107,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TbPassword" HorizontalAlignment="Left" Margin="274,142,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="BtnLogin" Content="Button" HorizontalAlignment="Left" Margin="312,203,0,0" VerticalAlignment="Top" Click="BtnLogin_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Row="0" Background="#212529">
+            <Image Source="/res/logo.png" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 15"/>
+        </Grid>
+
+        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="320" Height="200">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Логин" Grid.Row="0" FontSize="18"/>
+                <TextBox x:Name="TbLogin" Grid.Row="1" TextBlock.FontSize="18"/>
+            </Grid>
+
+            <Grid Grid.Row="1" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Пароль" Grid.Row="0" FontSize="18"/>
+                <PasswordBox x:Name="TbPassword" Grid.Row="1" TextBlock.FontSize="18"/>
+            </Grid>
+
+            <Button x:Name="BtnLogin" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти" Padding="40 5"
+                    Foreground="#ffffff" BorderBrush="#212529" Background="#212529" TextBlock.FontSize="18" Click="BtnLogin_Click"/>
+        </Grid>
     </Grid>
 </Window>
