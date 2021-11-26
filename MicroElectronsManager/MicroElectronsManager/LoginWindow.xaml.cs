@@ -46,6 +46,16 @@ namespace MicroElectronsManager
                     throw new Exception(ResponseMessageHandler.GetMessage(response.Content));
                 }
 
+                if (response.Data.Status == "Уволен")
+                {
+                    throw new Exception("Вы уволены, у вас больше нету доступа к системе.");
+                }
+
+                if (response.Data.Status == "В отпуске")
+                {
+                    throw new Exception("На время отпуска у вас нету доступа к системе, идите отдохните.");
+                }
+
                 this.Hide();
                 TbLogin.Text = "";
                 TbPassword.Password = "";

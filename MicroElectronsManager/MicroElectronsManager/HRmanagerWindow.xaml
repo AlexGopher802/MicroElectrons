@@ -9,6 +9,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -17,6 +18,54 @@
             <Button x:Name="BtnExit" Content="Выход" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0" Padding="30 5"
                     Background="#ffffff" BorderBrush="#ffffff" Foreground="#212529" FontSize="15" TextBlock.FontSize="18" Click="BtnExit_Click"/>
             <Image Source="/res/logo.png" HorizontalAlignment="Right" Margin="0 15 20 15"/>
+        </Grid>
+
+        <Menu Grid.Row="1" FontSize="18">
+            <MenuItem x:Name="MenuEmployee" Header="Сотрудники" IsEnabled="False" Foreground="#212529" Click="MenuEmployee_Click" Padding="5 3"/>
+            <MenuItem x:Name="MenuLabors" Header="Трудовые договора" Foreground="#212529" Click="MenuLabors_Click" Padding="5 3"/>
+            <MenuItem x:Name="MenuDismiss" Header="Заявления на увольнение" Foreground="#212529" Click="MenuDismiss_Click" Padding="5 3"/>
+            <MenuItem x:Name="MenuHoliday" Header="Заявления на отпуск" Foreground="#212529" Click="MenuHoliday_Click" Padding="5 3"/>
+        </Menu>
+
+        <!-- Сотрудники -->
+        <Grid x:Name="ContentEmployee" Grid.Row="2" Visibility="Visible">
+            <DataGrid x:Name="DataGridEmployee" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionMode="Single"
+                  RowHeaderWidth="0" Padding="2" HorizontalGridLinesBrush="LightGray" Foreground="#212529"
+                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="CmDismiss" Header="Уволить" Click="CmDismiss_Click"></MenuItem>
+                        <MenuItem x:Name="CmHoliday" Header="Отправить в отпуск" Click="CmHoliday_Click"></MenuItem>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Path=EmployeeId}" Visibility="Collapsed"/>
+                    <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Path=LastName}"/>
+                    <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Path=FirstName}"/>
+                    <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding Path=Patronymic}"/>
+                    <DataGridTextColumn Header="Дата рождения" Width="160" Binding="{Binding Path=Birthday}"/>
+                    <DataGridTextColumn Header="Логин" Width="*" Binding="{Binding Path=Login}"/>
+                    <DataGridTextColumn Header="Должность" Width="*" Binding="{Binding Path=Post}"/>
+                    <DataGridTextColumn Header="Оклад" Width="160" Binding="{Binding Path=Salary}"/>
+                    <DataGridTextColumn Header="Статус" Width="160" Binding="{Binding Path=Status}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <!-- Трудовые договора -->
+        <Grid x:Name="ContentLabors" Grid.Row="2" Visibility="Collapsed">
+            <TextBlock Text="Трудовые договора" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+        </Grid>
+        
+        <!-- Заявления на увольнение -->
+        <Grid x:Name="ContentDismiss" Grid.Row="2" Visibility="Collapsed">
+            <TextBlock Text="Заявления на увольнение" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+        </Grid>
+
+        <!-- Заявления на отпуск -->
+        <Grid x:Name="ContentHoliday" Grid.Row="2" Visibility="Collapsed">
+            <TextBlock Text="Заявления на отпуск" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
         </Grid>
     </Grid>
 </Window>

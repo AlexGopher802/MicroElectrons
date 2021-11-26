@@ -22,6 +22,41 @@ namespace MicroElectronsApi.Controllers
         }
 
         /// <summary>
+        /// Список всех неуволенных сотрудников
+        /// </summary>
+        [Route("[action]")]
+        [HttpGet]
+        public ActionResult AllList()
+        {
+            try
+            {
+                var result = (from user in _context.Users
+                              where user.Employee.Status.Name != "Уволен"
+                              join labor in _context.Labors on user.EmployeeId equals labor.EmployeeId
+                              select new UserData()
+                              {
+                                  EmployeeId = user.EmployeeId,
+                                  LastName = user.Employee.LastName,
+                                  FirstName = user.Employee.FirstName,
+                                  Patronymic = user.Employee.Patronymic,
+                                  Birthday = user.Employee.Birthday.ToString("dd.MM.yyyy"),
+                                  Status = user.Employee.Status.Name,
+                                  Salary = labor.Salary,
+                                  LaborDate = labor.DateConfirm.ToString("dd.MM.yyyy"),
+                                  Post = user.Employee.Post.Name,
+                                  Login = user.Login,
+                                  Password = user.Password
+                              }).ToList();
+
+                return new ObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+                return new ObjectResult(new { message = ex.Message }) { StatusCode = 501 };
+            }
+        }
+
+        /// <summary>
         /// Регистрация сотрудника
         /// </summary>
         [Route("[action]")]
