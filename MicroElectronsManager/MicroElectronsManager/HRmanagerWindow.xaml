@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MicroElectronsManager"
         mc:Ignorable="d"
-        Title="Отдел кадров" Width="1366" MinWidth="1366" Height="768" MinHeight="768" WindowState="Maximized" WindowStyle="SingleBorderWindow"  WindowStartupLocation="CenterScreen" Closed="Window_Closed" Loaded="Window_Loaded">
+        Title="Отдел кадров" Width="1366" MinWidth="1366" Height="768" MinHeight="768" WindowState="Maximized" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" Closed="Window_Closed" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
@@ -32,11 +32,12 @@
             <DataGrid x:Name="DataGridEmployee" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"
                   CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionMode="Single"
                   RowHeaderWidth="0" Padding="2" HorizontalGridLinesBrush="LightGray" Foreground="#212529"
-                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True">
+                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True" SelectionChanged="DataGridEmployee_SelectionChanged">
                 <DataGrid.ContextMenu>
                     <ContextMenu>
-                        <MenuItem x:Name="CmDismiss" Header="Уволить" Click="CmDismiss_Click"></MenuItem>
-                        <MenuItem x:Name="CmHoliday" Header="Отправить в отпуск" Click="CmHoliday_Click"></MenuItem>
+                        <MenuItem x:Name="CmAdd" Header="Добавить нового сотрудника" Click="CmAdd_Click"></MenuItem>
+                        <MenuItem x:Name="CmDismiss" Header="Уволить сотрудника" Click="CmDismiss_Click" IsEnabled="False"></MenuItem>
+                        <MenuItem x:Name="CmHoliday" Header="Отправить в отпуск" Click="CmHoliday_Click" IsEnabled="False"></MenuItem>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
                 <DataGrid.Columns>
@@ -55,17 +56,54 @@
 
         <!-- Трудовые договора -->
         <Grid x:Name="ContentLabors" Grid.Row="2" Visibility="Collapsed">
-            <TextBlock Text="Трудовые договора" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+            <DataGrid x:Name="DataGridLabor" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionMode="Single"
+                  RowHeaderWidth="0" Padding="2" HorizontalGridLinesBrush="LightGray" Foreground="#212529"
+                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Path=EmployeeId}" Visibility="Collapsed"/>
+                    <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Path=LastName}"/>
+                    <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Path=FirstName}"/>
+                    <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding Path=Patronymic}"/>
+                    <DataGridTextColumn Header="Должность" Width="*" Binding="{Binding Path=Post}"/>
+                    <DataGridTextColumn Header="Дата" Width="160" Binding="{Binding Path=Date}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
         
         <!-- Заявления на увольнение -->
         <Grid x:Name="ContentDismiss" Grid.Row="2" Visibility="Collapsed">
-            <TextBlock Text="Заявления на увольнение" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+            <DataGrid x:Name="DataGridDismiss" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionMode="Single"
+                  RowHeaderWidth="0" Padding="2" HorizontalGridLinesBrush="LightGray" Foreground="#212529"
+                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Path=EmployeeId}" Visibility="Collapsed"/>
+                    <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Path=LastName}"/>
+                    <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Path=FirstName}"/>
+                    <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding Path=Patronymic}"/>
+                    <DataGridTextColumn Header="Должность" Width="*" Binding="{Binding Path=Post}"/>
+                    <DataGridTextColumn Header="Дата" Width="160" Binding="{Binding Path=Date}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
 
         <!-- Заявления на отпуск -->
         <Grid x:Name="ContentHoliday" Grid.Row="2" Visibility="Collapsed">
-            <TextBlock Text="Заявления на отпуск" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+            <DataGrid x:Name="DataGridHoliday" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionMode="Single"
+                  RowHeaderWidth="0" Padding="2" HorizontalGridLinesBrush="LightGray" Foreground="#212529"
+                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Path=EmployeeId}" Visibility="Collapsed"/>
+                    <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Path=LastName}"/>
+                    <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Path=FirstName}"/>
+                    <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding Path=Patronymic}"/>
+                    <DataGridTextColumn Header="Должность" Width="*" Binding="{Binding Path=Post}"/>
+                    <DataGridTextColumn Header="Дата начала" Width="160" Binding="{Binding Path=DateStart}"/>
+                    <DataGridTextColumn Header="Дата конца" Width="160" Binding="{Binding Path=DateEnd}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </Grid>
 </Window>

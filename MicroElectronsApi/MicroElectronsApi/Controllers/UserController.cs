@@ -70,7 +70,7 @@ namespace MicroElectronsApi.Controllers
                     LastName = userData.LastName,
                     FirstName = userData.FirstName,
                     Patronymic = userData.Patronymic,
-                    Birthday = DateTime.Parse(userData.Birthday),
+                    Birthday = DateTime.ParseExact(userData.Birthday, "dd.MM.yyyy", null),
                     Post = _context.Posts.Where(p => p.Name == userData.Post).FirstOrDefault(),
                     Status = _context.EmployeeStatuses.Where(s => s.Name == "Работает").FirstOrDefault()
                 };
@@ -188,11 +188,136 @@ namespace MicroElectronsApi.Controllers
         }
 
         /// <summary>
+        /// Список должностей
+        /// </summary>
+        [Route("[action]")]
+        [HttpGet]
+        public ActionResult PostList()
+        {
+            try
+            {
+                var result = (from post in _context.Posts
+                              select new String(post.Name)).ToList();
+
+                if (result.Count == 0)
+                {
+                    throw new Exception("Должности не найдены");
+                }
+
+                return new ObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+                return new ObjectResult(new { message = ex.Message }) { StatusCode = 501 };
+            }
+        }
+
+        /// <summary>
+        /// Список трудовых договоров
+        /// </summary>
+        [Route("[action]")]
+        [HttpGet]
+        public ActionResult LaborsList()
+        {
+            try
+            {
+                var result = (from labor in _context.Labors
+                              select new LaborData()
+                              {
+                                  EmployeeId = labor.EmployeeId,
+                                  LastName = labor.Employee.LastName,
+                                  FirstName = labor.Employee.FirstName,
+                                  Patronymic = labor.Employee.Patronymic,
+                                  Post = labor.Employee.Post.Name,
+                                  Date = labor.DateConfirm.ToString("dd.MM.yyyy")
+                              }).ToList();
+
+                if (result.Count == 0)
+                {
+                    throw new Exception("Трудовые договора не найдены");
+                }
+
+                return new ObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+                return new ObjectResult(new { message = ex.Message }) { StatusCode = 501 };
+            }
+        }
+
+        /// <summary>
+        /// Список заявлений на увольнение
+        /// </summary>
+        [Route("[action]")]
+        [HttpGet]
+        public ActionResult DismissList()
+        {
+            try
+            {
+                var result = (from dismiss in _context.Dismissals
+                              select new DismissData()
+                              {
+                                  EmployeeId = dismiss.EmployeeId,
+                                  LastName = dismiss.Employee.LastName,
+                                  FirstName = dismiss.Employee.FirstName,
+                                  Patronymic = dismiss.Employee.Patronymic,
+                                  Post = dismiss.Employee.Post.Name,
+                                  Date = dismiss.DateConfirm.ToString("dd.MM.yyyy")
+                              }).ToList();
+
+                if (result.Count == 0)
+                {
+                    throw new Exception("Заявления на увольнение не найдены");
+                }
+
+                return new ObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+                return new ObjectResult(new { message = ex.Message }) { StatusCode = 501 };
+            }
+        }
+
+        /// <summary>
+        /// Список заявлений на отпуск
+        /// </summary>
+        [Route("[action]")]
+        [HttpGet]
+        public ActionResult HolidayList()
+        {
+            try
+            {
+                var result = (from holiday in _context.Holidays
+                              select new HolidayData()
+                              {
+                                  EmployeeId = holiday.EmployeeId,
+                                  LastName = holiday.Employee.LastName,
+                                  FirstName = holiday.Employee.FirstName,
+                                  Patronymic = holiday.Employee.Patronymic,
+                                  Post = holiday.Employee.Post.Name,
+                                  DateStart = holiday.DateStart.ToString("dd.MM.yyyy"),
+                                  DateEnd = holiday.DateEnd.ToString("dd.MM.yyyy")
+                              }).ToList();
+
+                if (result.Count == 0)
+                {
+                    throw new Exception("Заявления на отпуск не найдены");
+                }
+
+                return new ObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+                return new ObjectResult(new { message = ex.Message }) { StatusCode = 501 };
+            }
+        }
+
+        /// <summary>
         /// Отпуск сотрудника
         /// </summary>
         [Route("[action]")]
         [HttpPost]
-        public ActionResult Holiday(Holiday holidayData)
+        public ActionResult Holiday(HolidayData holidayData)
         {
             try
             {
@@ -205,8 +330,8 @@ namespace MicroElectronsApi.Controllers
                 Holiday holiday = new Holiday()
                 {
                     Employee = employee,
-                    DateStart = holidayData.DateStart,
-                    DateEnd = holidayData.DateEnd
+                    DateStart = DateTime.ParseExact(holidayData.DateStart, "dd.MM.yyyy", null),
+                    DateEnd = DateTime.ParseExact(holidayData.DateEnd, "dd.MM.yyyy", null)
                 };
                 _context.Holidays.Add(holiday);
 

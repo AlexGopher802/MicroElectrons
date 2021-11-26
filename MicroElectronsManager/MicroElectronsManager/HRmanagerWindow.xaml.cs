@@ -46,7 +46,7 @@ namespace MicroElectronsManager
             this.Close();
         }
 
-        private void GridEmployeeWrite()
+        public void GridEmployeeWrite()
         {
             try
             {
@@ -64,6 +64,72 @@ namespace MicroElectronsManager
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void GridLaborWrite()
+        {
+            try
+            {
+                DataGridLabor.ClearValue(ItemsControl.ItemsSourceProperty);
+                var response = apiClient.Get<List<LaborData>>(new RestRequest("user/laborslist"));
+
+                if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    throw new Exception(ResponseMessageHandler.GetMessage(response.Content));
+                }
+
+                DataGridLabor.ItemsSource = response.Data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void GridDismissWrite()
+        {
+            try
+            {
+                DataGridDismiss.ClearValue(ItemsControl.ItemsSourceProperty);
+                var response = apiClient.Get<List<DismissData>>(new RestRequest("user/dismisslist"));
+
+                if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    throw new Exception(ResponseMessageHandler.GetMessage(response.Content));
+                }
+
+                DataGridDismiss.ItemsSource = response.Data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        public void GridHolidayWrite()
+        {
+            try
+            {
+                DataGridHoliday.ClearValue(ItemsControl.ItemsSourceProperty);
+                var response = apiClient.Get<List<HolidayData>>(new RestRequest("user/holidaylist"));
+
+                if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    throw new Exception(ResponseMessageHandler.GetMessage(response.Content));
+                }
+
+                DataGridHoliday.ItemsSource = response.Data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void CmAdd_Click(object sender, RoutedEventArgs e)
+        {
+            this.IsEnabled = false;
+            new AddEmployeeWindow() { Owner = this }.Show();
         }
 
         private void CmDismiss_Click(object sender, RoutedEventArgs e)
@@ -108,12 +174,14 @@ namespace MicroElectronsManager
                 }
 
                 var selectedUser = DataGridEmployee.SelectedItem as UserData;
-                if (MessageBox.Show($"Вы точно хотите отправить в отпуск сотрудника: {selectedUser.LastName} {selectedUser.FirstName} {selectedUser.Patronymic}?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question)
-                    == MessageBoxResult.Yes)
+
+                if (selectedUser.Status == "В отпуске")
                 {
-                    MessageBox.Show("отпуск...");
-                    GridEmployeeWrite();
+                    throw new Exception("Сотрудник уже в отпуске");
                 }
+
+                this.IsEnabled = false;
+                new AddHolidayWindow() { Owner = this, user = selectedUser }.Show();
             }
             catch (Exception ex)
             {
@@ -139,6 +207,7 @@ namespace MicroElectronsManager
             ContentsClear();
             MenuEmployee.IsEnabled = false;
             ContentEmployee.Visibility = Visibility.Visible;
+            GridEmployeeWrite();
         }
 
         private void MenuLabors_Click(object sender, RoutedEventArgs e)
@@ -146,6 +215,7 @@ namespace MicroElectronsManager
             ContentsClear();
             MenuLabors.IsEnabled = false;
             ContentLabors.Visibility = Visibility.Visible;
+            GridLaborWrite();
         }
 
         private void MenuDismiss_Click(object sender, RoutedEventArgs e)
@@ -153,6 +223,7 @@ namespace MicroElectronsManager
             ContentsClear();
             MenuDismiss.IsEnabled = false;
             ContentDismiss.Visibility = Visibility.Visible;
+            GridDismissWrite();
         }
 
         private void MenuHoliday_Click(object sender, RoutedEventArgs e)
@@ -160,6 +231,13 @@ namespace MicroElectronsManager
             ContentsClear();
             MenuHoliday.IsEnabled = false;
             ContentHoliday.Visibility = Visibility.Visible;
+            GridHolidayWrite();
+        }
+
+        private void DataGridEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CmDismiss.IsEnabled = DataGridEmployee.SelectedItem != null;
+            CmHoliday.IsEnabled = DataGridEmployee.SelectedItem != null;
         }
     }
 }

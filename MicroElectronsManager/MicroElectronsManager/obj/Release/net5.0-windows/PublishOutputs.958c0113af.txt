@@ -1,0 +1,6 @@
+G:\Work\MicroElectrons\bin\MicroElectronsManager.exe
+G:\Work\MicroElectrons\bin\MicroElectronsManager.dll
+G:\Work\MicroElectrons\bin\MicroElectronsManager.deps.json
+G:\Work\MicroElectrons\bin\MicroElectronsManager.runtimeconfig.json
+G:\Work\MicroElectrons\bin\MicroElectronsManager.pdb
+G:\Work\MicroElectrons\bin\RestSharp.dll

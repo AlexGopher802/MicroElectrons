@@ -34,3 +34,7 @@ G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net
 G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\ManufactureWindow.baml
 G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\StorekeepWindow.baml
 G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\SupplyWindow.baml
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\AddHolidayWindow.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\AddHolidayWindow.baml
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\AddEmployeeWindow.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\AddEmployeeWindow.baml
