@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Work\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj": {}
+    "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj": {}
   },
   "projects": {
-    "G:\\Work\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj": {
+    "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Work\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj",
+        "projectUniqueName": "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj",
         "projectName": "MicroElectronsApi",
-        "projectPath": "G:\\Work\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj",
+        "projectPath": "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj",
         "packagesPath": "C:\\Users\\alexs\\.nuget\\packages\\",
-        "outputPath": "G:\\Work\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\obj\\",
+        "outputPath": "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\alexs\\Downloads": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
         }
       }
     }

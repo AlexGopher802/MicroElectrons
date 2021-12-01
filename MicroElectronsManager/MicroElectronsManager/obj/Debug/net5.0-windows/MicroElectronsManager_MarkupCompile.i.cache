@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\
+C:\Users\alexs\Desktop\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\
 MicroElectronsManager
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\App.xaml
+C:\Users\alexs\Desktop\MicroElectrons\MicroElectronsManager\MicroElectronsManager\App.xaml
 9904666697
 
 202045156586
 194-883166046
 AddEmployeeWindow.xaml;AddHolidayWindow.xaml;BookkeepWindow.xaml;HRmanagerWindow.xaml;LoginWindow.xaml;ManufactureWindow.xaml;StorekeepWindow.xaml;SupplyWindow.xaml;VisitorWindow.xaml;
 
-False
+True
 

@@ -96,5 +96,37 @@ namespace MicroElectronsApi.Controllers
                 return new ObjectResult(new { message = ex.Message }) { StatusCode = 501 };
             }
         }
+
+        /// <summary>
+        /// Возвращает список посетителей
+        /// </summary>        
+        [Route("[action]")]
+        [HttpGet]
+        public ActionResult AllList()
+        {
+            try
+            {
+                var result = (from visitor in _context.VisitorJournals
+                              select new VisitorData()
+                              {
+                                  EmployeeEntryId = visitor.EmployeeEntryId,
+                                  EmployeeEntryName = $"{visitor.EmployeeEntry.LastName} {visitor.EmployeeEntry.FirstName} {visitor.EmployeeEntry.Patronymic}",
+                                  EmployeeExitId = visitor.EmployeeExitId,
+                                  EmployeeExitName = $"{visitor.EmployeeExit.LastName} {visitor.EmployeeExit.FirstName} {visitor.EmployeeExit.Patronymic}",
+                                  DateTimeEntry = visitor.DateTimeEntry.ToString("dd.MM.yyyy"),
+                                  DateTimeExit = visitor.DateTimeExit.Value.ToString("dd.MM.yyyy"),
+                                  VisitorLastName = visitor.Visitor.LastName,
+                                  VisitorFirstName = visitor.Visitor.FirstName,
+                                  VisitorPatronymic = visitor.Visitor.Patronymic,
+                                  Passport = visitor.Visitor.Passport
+                              }).ToList();
+
+                return new ObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+                return new ObjectResult(new { message = ex.Message }) { StatusCode = 501 };
+            }
+        }
     }
 }
