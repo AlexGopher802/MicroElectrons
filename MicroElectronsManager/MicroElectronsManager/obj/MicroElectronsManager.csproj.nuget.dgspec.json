@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\MicroElectronsManager.csproj": {}
+    "G:\\Work\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\MicroElectronsManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\MicroElectronsManager.csproj": {
+    "G:\\Work\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\MicroElectronsManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\MicroElectronsManager.csproj",
+        "projectUniqueName": "G:\\Work\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\MicroElectronsManager.csproj",
         "projectName": "MicroElectronsManager",
-        "projectPath": "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\MicroElectronsManager.csproj",
+        "projectPath": "G:\\Work\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\MicroElectronsManager.csproj",
         "packagesPath": "C:\\Users\\alexs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\obj\\",
+        "outputPath": "G:\\Work\\MicroElectrons\\MicroElectronsManager\\MicroElectronsManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\alexs\\Downloads": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -67,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

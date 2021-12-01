@@ -68,7 +68,8 @@ namespace MicroElectronsManager
 
         private void CmAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            this.IsEnabled = false;
+            new AddVisitor() { Owner = this, user = user }.Show();
         }
 
         private void CmExit_Click(object sender, RoutedEventArgs e)

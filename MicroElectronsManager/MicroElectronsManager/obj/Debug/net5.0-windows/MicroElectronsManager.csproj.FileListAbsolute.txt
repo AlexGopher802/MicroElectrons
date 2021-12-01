@@ -78,3 +78,5 @@ C:\Users\alexs\Desktop\MicroElectrons\MicroElectronsManager\MicroElectronsManage
 C:\Users\alexs\Desktop\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\MicroElectronsManager.csproj.CoreCompileInputs.cache
 C:\Users\alexs\Desktop\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\MicroElectronsManager.csproj.CopyComplete
 C:\Users\alexs\Desktop\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\MicroElectronsManager.genruntimeconfig.cache
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\AddVisitor.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\AddVisitor.baml
