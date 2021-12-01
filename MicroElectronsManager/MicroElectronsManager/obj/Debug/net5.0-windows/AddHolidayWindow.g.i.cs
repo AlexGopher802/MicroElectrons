@@ -93,7 +93,7 @@ namespace MicroElectronsManager {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MicroElectronsManager;V1.0.0.0;component/addholidaywindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MicroElectronsManager;component/addholidaywindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\AddHolidayWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

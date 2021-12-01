@@ -18,5 +18,29 @@
                     Background="#ffffff" BorderBrush="#ffffff" Foreground="#212529" FontSize="15" TextBlock.FontSize="18" Click="BtnExit_Click"/>
             <Image Source="/res/logo.png" HorizontalAlignment="Right" Margin="0 15 20 15"/>
         </Grid>
+
+        <DataGrid x:Name="DataGridVisitors" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionMode="Single"
+                  RowHeaderWidth="0" Padding="2" HorizontalGridLinesBrush="LightGray" Foreground="#212529"
+                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True" SelectionChanged="DataGridVisitors_SelectionChanged">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="CmAdd" Header="Добавить посетителя" Click="CmAdd_Click"></MenuItem>
+                    <MenuItem x:Name="CmExit" Header="Выход посетителя" Click="CmExit_Click"  IsEnabled="False"></MenuItem>
+                    <MenuItem x:Name="CmWhoEntry" Header="Кто впустил" Click="CmWhoEntry_Click"  IsEnabled="False"></MenuItem>
+                    <MenuItem x:Name="CmWhoExit" Header="Кто выпустил" Click="CmWhoExit_Click"  IsEnabled="False"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Path=VisitorLastName}"/>
+                <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Path=VisitorFirstName}"/>
+                <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding Path=VisitorPatronymic}"/>
+                <DataGridTextColumn Header="Паспорт" Width="160" Binding="{Binding Path=Passport}"/>
+                <DataGridTextColumn Header="Дата входа" Width="160" Binding="{Binding Path=DateTimeEntry}"/>
+                <DataGridTextColumn Header="Дата выхода" Width="160" Binding="{Binding Path=DateTimeExit}"/>
+                <DataGridTextColumn Header="Кто впустил" Width="*" Binding="{Binding Path=EmployeeEntryName}" Visibility="Collapsed"/>
+                <DataGridTextColumn Header="Кто выпустил" Width="*" Binding="{Binding Path=EmployeeExitName}" Visibility="Collapsed"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

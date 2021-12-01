@@ -69,7 +69,7 @@ namespace MicroElectronsManager {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MicroElectronsManager;V1.0.0.0;component/bookkeepwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MicroElectronsManager;component/bookkeepwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\BookkeepWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
