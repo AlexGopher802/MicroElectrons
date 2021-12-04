@@ -18,5 +18,24 @@
                     Background="#ffffff" BorderBrush="#ffffff" Foreground="#212529" FontSize="15" TextBlock.FontSize="18" Click="BtnExit_Click"/>
             <Image Source="/res/logo.png" HorizontalAlignment="Right" Margin="0 15 20 15"/>
         </Grid>
+
+        <DataGrid x:Name="DataGridSupply" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionMode="Single"
+                  RowHeaderWidth="0" Padding="2" HorizontalGridLinesBrush="LightGray" Foreground="#212529"
+                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True" SelectionChanged="DataGridSupply_SelectionChanged">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="CmAdd" Header="Добавить поставку" Click="CmAdd_Click"></MenuItem>
+                    <MenuItem x:Name="CmCompos" Header="Состав поставки" Click="CmCompos_Click"  IsEnabled="False"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Контрагент" Width="*" Binding="{Binding Path=Counterparty}"/>
+                <DataGridTextColumn Header="Тип поставки" Width="160" Binding="{Binding Path=SellOrBuy}"/>
+                <DataGridTextColumn Header="Сумма" Width="160" Binding="{Binding Path=Summa}"/>
+                <DataGridTextColumn Header="Дата" Width="160" Binding="{Binding Path=Date}"/>
+                <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Path=SupplyId}" Visibility="Collapsed"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

@@ -80,3 +80,7 @@ C:\Users\alexs\Desktop\MicroElectrons\MicroElectronsManager\MicroElectronsManage
 C:\Users\alexs\Desktop\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\MicroElectronsManager.genruntimeconfig.cache
 G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\AddVisitor.g.cs
 G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\AddVisitor.baml
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\SupplyMoreInfoWindow.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\SupplyMoreInfoWindow.baml
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\AddSupplyWindow.g.cs
+G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\obj\Debug\net5.0-windows\AddSupplyWindow.baml

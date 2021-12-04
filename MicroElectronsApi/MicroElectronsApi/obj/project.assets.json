@@ -919,11 +919,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj",
+      "projectUniqueName": "G:\\Work\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj",
       "projectName": "MicroElectronsApi",
-      "projectPath": "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj",
+      "projectPath": "G:\\Work\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj",
       "packagesPath": "C:\\Users\\alexs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\obj\\",
+      "outputPath": "G:\\Work\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -938,6 +938,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\alexs\\Downloads": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -989,7 +990,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

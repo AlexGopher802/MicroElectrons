@@ -9,10 +9,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AddCounterpartyWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AddEmployeeWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="AddHolidayWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddSupplyWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="AddVisitor.xaml.cs">
@@ -30,6 +36,9 @@
     <Compile Update="StorekeepWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SupplyMoreInfoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SupplyWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -38,10 +47,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AddCounterpartyWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AddEmployeeWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AddHolidayWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddSupplyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AddVisitor.xaml">
@@ -60,6 +75,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StorekeepWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SupplyMoreInfoWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SupplyWindow.xaml">

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Sh8+PpyJimJvKHWJ5JhWXKk8Z5WXC/dT+ZTqPXA/ImIgEKG3XjJcqVTsXlhy00mRj5wxbZBulyc+z9NDmL5vCA==",
+  "dgSpecHash": "2UAAbKnOs9s/n5rQiJ2OwKeowxZRbNr4avIxXgwER5GbBgTM8pwkUNqFLElw73t1rvOdC6xQuTafrWj7xw0fFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexs\\Desktop\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj",
+  "projectFilePath": "G:\\Work\\MicroElectrons\\MicroElectronsApi\\MicroElectronsApi\\MicroElectronsApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexs\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\alexs\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
