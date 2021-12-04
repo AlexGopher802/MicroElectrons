@@ -13,5 +13,6 @@ namespace MicroElectronsManager.Models
         public string CategoryName { get; set; }
         public int Quantity { get; set; }
         public int Price { get; set; }
+        public string StorageMethod { get; set; }
     }
 }

@@ -18,13 +18,22 @@
     <Compile Update="AddHolidayWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="AddProductWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AddSupplyWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddTaskWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="AddVisitor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="BookkeepWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ChangeStorageMethodWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="HRmanagerWindow.xaml.cs">
@@ -56,13 +65,22 @@
     <Page Update="AddHolidayWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="AddProductWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AddSupplyWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddTaskWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AddVisitor.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="BookkeepWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ChangeStorageMethodWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="HRmanagerWindow.xaml">

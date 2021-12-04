@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET5_0;NETCOREAPP
 G:\Work\MicroElectrons\MicroElectronsManager\MicroElectronsManager\App.xaml
-9904666697
+16-370462743
 
-209478198
-194-883166046
-AddEmployeeWindow.xaml;AddHolidayWindow.xaml;BookkeepWindow.xaml;HRmanagerWindow.xaml;LoginWindow.xaml;ManufactureWindow.xaml;StorekeepWindow.xaml;SupplyWindow.xaml;VisitorWindow.xaml;
+33702026796
+195-488960995
+AddCounterpartyWindow.xaml;AddEmployeeWindow.xaml;AddHolidayWindow.xaml;AddProductWindow.xaml;AddSupplyWindow.xaml;AddTaskWindow.xaml;AddVisitor.xaml;BookkeepWindow.xaml;ChangeStorageMethodWindow.xaml;HRmanagerWindow.xaml;LoginWindow.xaml;ManufactureWindow.xaml;StorekeepWindow.xaml;SupplyMoreInfoWindow.xaml;SupplyWindow.xaml;VisitorWindow.xaml;
 
-False
+True
 

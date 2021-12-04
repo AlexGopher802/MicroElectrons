@@ -85,7 +85,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button x:Name="BtnConfirm" Content="Подтвердить" Width="120" Grid.Column="0" FontSize="18" Padding="0 2"
-                        Foreground="#ffffff" BorderBrush="#212529" Background="#212529" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        Foreground="#ffffff" BorderBrush="#212529" Background="#212529" VerticalAlignment="Center" HorizontalAlignment="Center" Click="BtnConfirm_Click"/>
                 <Button x:Name="BtnCancel" Content="Отмена" Width="120" Grid.Column="1" FontSize="18" Padding="0 2"
                         Foreground="#ffffff" BorderBrush="#212529" Background="#212529" Click="BtnCancel_Click" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Grid>

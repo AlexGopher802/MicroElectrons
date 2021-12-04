@@ -36,7 +36,31 @@ namespace MicroElectronsManager
 
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                ValidForm();
 
+                var response = apiClient.Post(new RestRequest("counterparty/Add")
+                    .AddJsonBody(new
+                    {
+                        Name = TbName.Text.ToString(),
+                        Tin = TbTin.Text.ToString(),
+                        Address = TbAddress.Text.ToString(),
+                        Bic = TbBic.Text.ToString()
+                    }));
+
+                if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    throw new Exception(ResponseMessageHandler.GetMessage(response.Content));
+                }
+
+                (this.Owner as AddSupplyWindow).WriteListCounterparty();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
@@ -46,7 +70,10 @@ namespace MicroElectronsManager
 
         private void ValidForm()
         {
-
+            if (TbAddress.Text.Trim() == "") { throw new Exception("Введите адрес"); }
+            if (TbName.Text.Trim() == "") { throw new Exception("Введите наименование"); }
+            if (TbBic.Text.Trim() == "") { throw new Exception("Введите бик"); }
+            if (TbTin.Text.Trim() == "") { throw new Exception("Введите инн"); }
         }
     }
 }

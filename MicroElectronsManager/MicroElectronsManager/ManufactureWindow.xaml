@@ -18,5 +18,25 @@
                     Background="#ffffff" BorderBrush="#ffffff" Foreground="#212529" FontSize="15" TextBlock.FontSize="18" Click="BtnExit_Click"/>
             <Image Source="/res/logo.png" HorizontalAlignment="Right" Margin="0 15 20 15"/>
         </Grid>
+
+        <DataGrid x:Name="DataGridManufs" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionMode="Single"
+                  RowHeaderWidth="0" Padding="2" HorizontalGridLinesBrush="LightGray" Foreground="#212529"
+                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True" SelectionChanged="DataGridManufs_SelectionChanged">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="CmAdd" Header="Добавить задачу" Click="CmAdd_Click"></MenuItem>
+                    <MenuItem x:Name="CmEnd" Header="Окончить задачу" Click="CmEnd_Click"  IsEnabled="False"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Товар" Width="*" Binding="{Binding Path=ProductName}"/>
+                <DataGridTextColumn Header="Количество" Width="170" Binding="{Binding Path=Quantity}"/>
+                <DataGridTextColumn Header="Дата начала" Width="170" Binding="{Binding Path=DateStart}"/>
+                <DataGridTextColumn Header="Дата дедлайна" Width="170" Binding="{Binding Path=DateDeadline}"/>
+                <DataGridTextColumn Header="Дата окончания" Width="170" Binding="{Binding Path=DateEnd}"/>
+                <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Path=TaskId}" Visibility="Collapsed"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

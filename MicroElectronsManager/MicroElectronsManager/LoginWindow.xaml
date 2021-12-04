@@ -29,7 +29,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Логин" Grid.Row="0" FontSize="18"/>
-                <TextBox x:Name="TbLogin" Text="supp1" Grid.Row="1" TextBlock.FontSize="18"/>
+                <TextBox x:Name="TbLogin" Text="" Grid.Row="1" TextBlock.FontSize="18"/>
             </Grid>
 
             <Grid Grid.Row="1" VerticalAlignment="Center">
@@ -38,7 +38,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Пароль" Grid.Row="0" FontSize="18"/>
-                <PasswordBox x:Name="TbPassword" Password="supp" Grid.Row="1" TextBlock.FontSize="18"/>
+                <PasswordBox x:Name="TbPassword" Password="" Grid.Row="1" TextBlock.FontSize="18"/>
             </Grid>
 
             <Button x:Name="BtnLogin" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти" Padding="40 5"

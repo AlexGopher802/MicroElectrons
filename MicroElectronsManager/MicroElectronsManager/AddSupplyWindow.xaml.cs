@@ -108,12 +108,15 @@ namespace MicroElectronsManager
 
         private void ValidProductForm()
         {
-
+            if (CbProducts.SelectedItem == null) { throw new Exception("Выберите товар"); }
+            if (TbQuantity.Text.Trim() == "") { throw new Exception("Введите количество товара"); }
+            if (TbPrice.Text.Trim() == "") { throw new Exception("Введите сумму товара"); }
         }
 
         private void ValidForm()
         {
-
+            if (CbCounterparty.SelectedItem == null) { throw new Exception("Выберите контрагента"); }
+            if (products.Count == 0) { throw new Exception("В корзине поставки ничего нету"); }
         }
 
         private void ClearProductForm()
@@ -125,12 +128,43 @@ namespace MicroElectronsManager
 
         private void BtnAddCounterparty_Click(object sender, RoutedEventArgs e)
         {
-
+            this.IsEnabled = false;
+            new AddCounterpartyWindow() { Owner = this }.Show();
         }
 
         private void BtnAddProduct_Click(object sender, RoutedEventArgs e)
         {
+            this.IsEnabled = false;
+            new AddProductWindow() { Owner = this }.Show();
+        }
 
+        private void BtnConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ValidForm();
+
+                var response = apiClient.Post(new RestRequest("supply/add")
+                    .AddJsonBody(new
+                    {
+                        IsSell = RbIsSell.IsChecked,
+                        CounterpartyName = CbCounterparty.SelectedItem.ToString(),
+                        Products = products
+                    }));
+
+                if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    throw new Exception(ResponseMessageHandler.GetMessage(response.Content));
+                }
+
+                (this.Owner as SupplyWindow).DataGridSupplyWrite();
+                MessageBox.Show("Поставка зарегистрирована", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

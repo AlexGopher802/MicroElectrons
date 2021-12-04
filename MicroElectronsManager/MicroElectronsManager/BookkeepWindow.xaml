@@ -18,5 +18,24 @@
                     Background="#ffffff" BorderBrush="#ffffff" Foreground="#212529" FontSize="15" TextBlock.FontSize="18" Click="BtnExit_Click"/>
             <Image Source="/res/logo.png" HorizontalAlignment="Right" Margin="0 15 20 15"/>
         </Grid>
+
+        <DataGrid x:Name="DataGridComeJournal" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionMode="Single"
+                  RowHeaderWidth="0" Padding="2" HorizontalGridLinesBrush="LightGray" Foreground="#212529"
+                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="CmExport" Header="Экспорт в эксель" Click="CmExport_Click"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Предмет" Width="*" Binding="{Binding Path=SubjectName}"/>
+                <DataGridTextColumn Header="Количество" Width="170" Binding="{Binding Path=Quantity}"/>
+                <DataGridTextColumn Header="Дата" Width="170" Binding="{Binding Path=DateTimeConfirm}"/>
+                <DataGridTextColumn Header="Приход/расход" Width="170" Binding="{Binding Path=IsCome}"/>
+                <DataGridTextColumn Header="Тип операции" Width="170" Binding="{Binding Path=Operation}"/>
+                <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Path=JournalId}" Visibility="Collapsed"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

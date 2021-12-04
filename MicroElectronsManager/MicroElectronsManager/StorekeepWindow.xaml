@@ -18,5 +18,23 @@
                     Background="#ffffff" BorderBrush="#ffffff" Foreground="#212529" FontSize="15" TextBlock.FontSize="18" Click="BtnExit_Click"/>
             <Image Source="/res/logo.png" HorizontalAlignment="Right" Margin="0 15 20 15"/>
         </Grid>
+
+        <DataGrid x:Name="DataGridStorage" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionMode="Single"
+                  RowHeaderWidth="0" Padding="2" HorizontalGridLinesBrush="LightGray" Foreground="#212529"
+                  GridLinesVisibility="Horizontal" RowHeight="35" IsReadOnly="True" SelectionChanged="DataGridStorage_SelectionChanged">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="CmChangeMethod" Header="Изменить способ хранения" Click="CmChangeMethod_Click"  IsEnabled="False"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Header="Категория" Width="*" Binding="{Binding Path=CategoryName}"/>
+                <DataGridTextColumn Header="Количество" Width="170" Binding="{Binding Path=Quantity}"/>
+                <DataGridTextColumn Header="Способ хранения" Width="180" Binding="{Binding Path=StorageMethod}"/>
+                <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Path=ProductId}" Visibility="Collapsed"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
