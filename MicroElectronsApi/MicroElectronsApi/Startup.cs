@@ -27,6 +27,7 @@ namespace MicroElectronsApi
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
+            MicroElectronsDBContext.connectionString = connection;
             services.AddDbContext<MicroElectronsDBContext>(s => s.UseMySql(connection, new MySqlServerVersion(new Version(5, 7, 36))));
             services.AddControllers();
         }

@@ -8,6 +8,8 @@ namespace MicroElectronsApi.Models
 {
     public partial class MicroElectronsDBContext : DbContext
     {
+        public static string connectionString; 
+
         public MicroElectronsDBContext()
         {
         }
@@ -42,7 +44,7 @@ namespace MicroElectronsApi.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=gopher-server.xyz;user id=microe-client;password=Microe123!;database=MicroElectronsDB", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.7.36-mysql"));
+                optionsBuilder.UseMySql(connectionString, Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.7.36-mysql"));
             }
         }
 
